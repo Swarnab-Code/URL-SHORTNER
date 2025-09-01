@@ -44,7 +44,6 @@ const shortUrlSchema = new mongoose.Schema({
 })
 
 // Index for efficient queries
-shortUrlSchema.index({ shortcode: 1 })
 shortUrlSchema.index({ expiresAt: 1 })
 
 // Virtual for click count
