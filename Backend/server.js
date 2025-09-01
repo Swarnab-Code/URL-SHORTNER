@@ -42,6 +42,10 @@ app.use((error, req, res, next) => {
 	})
 })
 
+app.get('/', (req, res) => {
+	res.json({ message: 'Backend is running!' });
+});  
+
 app.use((req, res) => {
 	res.status(404).json({
 		error: "Route not found",
