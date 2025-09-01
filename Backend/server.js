@@ -27,12 +27,13 @@ mongoose
 		console.error("MongoDB connection error:", error)
 	})
 
-app.use("/shorturls", shortUrlRoutes)
-app.use("/", redirectRoutes)
-
 app.get("/health", (req, res) => {
 	res.json({ status: "OK", timestamp: new Date().toISOString() })
 })
+
+app.use("/shorturls", shortUrlRoutes)
+app.use("/", redirectRoutes)
+
 
 app.use((error, req, res, next) => {
 	console.error("Unhandled error:", error.message)
